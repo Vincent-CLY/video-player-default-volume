@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --active-bg: whitesmoke;
+            --inactive-bg: lightgrey;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+        }
+        li {
+            width: 100%;
+            text-align: center;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        button.menu-item.left li {
+            position: absolute;
+            left: 0%;
+            top: -40px;
+        }
+        button.menu-item.right li {
+            position: absolute;
+            left: 5%;
+            top: 10px;
+        }
+        .menu-item {
+            font-family: "Protest Strike", sans-serif;
+            font-size: 26px;
+            height: 0;
+            border: none;
+            width: 100%;
+            color: black;
+            cursor: pointer;
+        }
+        .menu-item.left {
+            border-right: 50px solid var(--active-bg);
+            border-top: 50px solid var(--active-bg);
+            border-left: 50px solid var(--active-bg);
+            position: relative;
+        }
+        .menu-item.right {
+            border-right: 50px solid var(--inactive-bg);
+            border-bottom: 50px solid var(--inactive-bg);
+            border-left: 50px solid var(--active-bg);
+            position: relative;
+        }
+        .menu-item.left.active::before {
+            content: "";
+            position: absolute;
+            border: 2.5px solid blue;
+            width: 108%;
+            left: 0;
+            top: -45px;
+        }
+        .menu-item.right.active::before {
+            content: "";
+            position: absolute;
+            border: 2.5px solid blue;
+            width: 95%;
+            left: 45px;
+            top: 6px;
+            
+        }
+        .set {
+            display: none;
+        }
+        .set.active {
+            display: block;
+        }
+        .history {
+            display: none;
+        }
+        .history.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Default Volume Setter</h1>
+    <main>
+        <nav>
+            <ul>
+                <button class="menu-item left active"><li>Set</li></button>
+                <button class="menu-item right"><li>History</li></button>
+            </ul>
+        </nav>
+        <div class="set active">
+            <div>
+                Volume:
+                <input type="number" min="0" max="100" pattern="[\d.]"></input>
+            </div>
+            <div>
+                Website URL:
+                <input type="url"></input>
+            </div>
+            <input type="reset" value="Result"></input>
+            <input type="submit" value="Submit"></input>
+        </div>
+        <div class="history">
+            <input type="reset" value="Result"></input>
+            <input type="submit" value="Submit"></input>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Default Video Player Volume Setter Extensions",
+    "description": "Set Video Player Default Volume For Different Website",
+    "version": "1.0",
+    "action": {
+      "default_popup": "gui.html",
+      "default_icon": "default_volume_setter.png"
+    }
+}
